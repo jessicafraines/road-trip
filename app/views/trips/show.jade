@@ -8,11 +8,15 @@ block content
         .col-xs-4
           form(role='form', method='post', action='/trips/#{trip._id}/stops')
             .form-group
-            button.btn.btn-success#add-stop(type='button') Add Stop
-            .col-xs-8
-             .form-group.stop-group
+            .form-group.stop-group
               input.form-control.stops(type='text', name='stops')
-              button.btn.btn-primary(type='submit') Add Stops to Trip
+              button.btn.btn-primary(type='submit') Add Stops to Your Trip
+        .col-xs-4
+
+        .col-xs-4
+              h3 Pictures from the Trip
+              each photo in trip.photos
+                .photo.thumbnail.a(href='#{photo}'): img(src='#{photo}')
 
 block scripts
   script(src='/js/user/show.js')

@@ -1,4 +1,5 @@
 /* global geocode */
+/* global google */
 (function(){
   'use strict';
 
@@ -25,5 +26,20 @@
       });
     });
     e.preventDefault();
+  }
+  function calculateDistance(start, end){
+    start   = new google.maps.LatLng(slat, slng),
+    end     = new google.maps.LatLng(elong, elng),
+    service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+        {
+          origins: [start],
+          destination: [end],
+          travelMode: google.maps.TravelMode.DRIVING,
+          unitSystem: google.maps.UnitSystem.IMPERIAL,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status){
+        });
   }
 })();

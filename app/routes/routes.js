@@ -20,9 +20,10 @@ module.exports = function(app, express){
   app.get('/contact', home.contact);
 
   app.get('/trips/new', trips.new);
-  app.post('/trips/', trips.create);
+  app.post('/trips/new', trips.create);
   app.get('/trips', trips.index);
   app.get('/trips/:id', trips.show);
+  app.get('trips/:id/stops', trips.stops);
 
   console.log('Express: Routes Loaded');
 };

@@ -5,7 +5,7 @@ block content
       .row
         .col-xs-12
           table.table.table-striped
-            | ...
+            | Here are your trips
             thead
               th Name
               th Cash
@@ -25,16 +25,19 @@ block content
               each trip in trips
                 tr
                   td: a(href='/trips/#{trip._id}')= trip.name
-                  td= trip.cash
+                  td $#{trip.cash.toFixed(2)}
                   td= trip.start
                   td= trip.end
                   td= moment(trip.startdate).format('MMM Do YYYY')
                   td= moment(trip.enddate).format('MMM Do YYYY')
-                  td= trip.stops
-                  td= trip.distance
+                  td test
+                  td test
                   td= trip.mpg
-                  td= trip.gascost
-                  //td= trip.photos.length
+                  td $#{trip.gascost.toFixed(2)}
+                  td test
+                  td test
+                  td test
+                  td= trip.photos.length
 
 
 block scripts

@@ -11,19 +11,20 @@ exports.new = function(req, res){
 
 exports.create = function(req, res){
   var form = new mp.Form();
+  //console.log(req.body);
   form.parse(req, function(err, fields, files){
+    console.log('FIELDS', fields);
     Trip.create(fields, files, function(){
   //Trip.create(req.body, function(){
-      console.log('FORM', fields, files);
+     // console.log('FORM', fields, files);
       res.redirect('/trips');
-      console.log('AFTER REDIRECT', fields, files);
-      console.log('TRIP', Trip);
     });
   });
 };
 
 exports.index = function(req, res){
   Trip.all(function(err, trips){
+    console.log('TRIPS', trips);
     res.render('trips/index', {trips:trips, moment:moment});
   });
 };
@@ -34,3 +35,6 @@ exports.show = function(req, res){
   });
 };
 
+exports.stops = function(req, res){
+  res.render('trips/stops');
+};

@@ -7,7 +7,7 @@ var Mongo = require('mongodb'),
     path  = require('path');
 
 function Trip(o){
-  console.log('1111', o);
+  this._id        = Mongo.ObjectID();
   this.name       = o.name[0];
   this.cash       = parseFloat(o.cash[0]);
   this.start      = o.start[0];
@@ -32,18 +32,11 @@ Trip.all = function(cb){
   Trip.collection.find().toArray(cb);
 };
 
-/*Trip.create = function(o, cb){
-  var t = new Trip(o);
-  Trip.collection.save(t, cb);
-};*/
-
 Trip.create = function(fields, files, cb){
   console.log('222', fields, files);
   var t = new Trip(fields);
   t.moveFiles(files);
   Trip.collection.save(t, cb);
-  console.log('333', t);
-  return(t);
 };
 
 Trip.prototype.moveFiles = function(files){

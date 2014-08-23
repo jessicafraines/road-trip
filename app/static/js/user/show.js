@@ -12,7 +12,7 @@
       addMarker(pos.lat, pos.lng, pos.name);
     });
   });
-  function addMarker(lat, lng, name){
+  function addMarker(slat, slng, start){
     var latLng = new google.maps.LatLng(lat, lng);
     new google.maps.Marker({map: map, position: latLng, title: name, animation: google.maps.Animation.DROP});
   }

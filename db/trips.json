@@ -1,0 +1,31 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Summer Trip",
+  "cash":500,
+  "start":"Nashville",
+  "slat":36.17,
+  "slng":-86.78,
+  "startdate":{"$date":1408756123313},
+  "end":"Green Bay",
+  "elat":44.52,
+  "elng":-88.20,
+  "enddate":{"$date":1408756150366},
+  "mpg":50,
+  "gascost":4.50
+}
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"Winter Trip",
+  "cash":1500,
+  "start":"Nashville",
+  "slat":36.17,
+  "slng":-86.78,
+  "startdate":{"$date":1408756422919},
+  "end":"Tampa",
+  "elat":27.97,
+  "elng":-82.47,
+  "enddate":{"$date":1408756429165},
+  "mpg":20,
+  "gascost":3.50
+}
+

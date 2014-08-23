@@ -1,0 +1,42 @@
+extends ../shared/template
+block content
+  #trips
+    .container
+      .row
+        .col-xs-12
+          table.table.table-striped
+            | ...
+            thead
+              th Name
+              th Cash
+              th Traveling From
+              th Traveling To
+              th Departure Date
+              th Return Date
+              th Stops
+              th Distance(miles)
+              th MPG
+              th Fuel Price
+              th Gallons
+              th Fuel Cost
+              th Delta
+              th Photos
+            tbody
+              each trip in trips
+                tr
+                  td: a(href='/trips/#{trip._id}')= trip.name
+                  td= trip.cash
+                  td= trip.start
+                  td= trip.end
+                  td= moment(trip.startdate).format('MMM Do YYYY')
+                  td= moment(trip.enddate).format('MMM Do YYYY')
+                  td= trip.stops
+                  td= trip.distance
+                  td= trip.mpg
+                  td= trip.gascost
+                  //td= trip.photos.length
+
+
+block scripts
+  script(src='/js/user/trips.js')
+

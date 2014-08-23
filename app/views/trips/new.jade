@@ -1,0 +1,46 @@
+extends ../shared/template
+block content
+  img(src= '../img/road-icon.gif')
+  h2 New Trip
+  .container
+    .row
+      .col-xs-12
+
+        form(role='form', method='post', action='/trips', enctype-'multipart/form-data')
+          .col-xs-6
+            .form-group
+              label(for='name') Enter Name
+              input#name(type='text', placeholder='Summer Trip', name='name')
+            .form-group
+              label(for='startdate') Departure Date
+              input#startdate(type='date', placeholder='11/01/2104', name='startdate')
+            .form-inline
+              label(for='start') Traveling From
+              input#start(type='text', placeholder='Nashville', name='start')
+              input#slat(type='hidden', name='slat')
+              input#slng(type='hidden', name='slng')
+            .form-group
+              label(for='cash') Money for the Trip
+              input#cash(type='number', placeholder='$500', name='cash')
+          .col-xs-6
+            .form-group
+              label(for='mpg') MPG
+              input#mpg(type='number', placeholder='25', name='mpg')
+            .form-group
+              label(for='enddate') Return Date
+              input#enddate(type='date', placeholder='11/21/2104', name='enddate')
+            .form-inline
+              label(for='end') Traveling To
+              input#end(type='text', placeholder='Green Bay', name='end')
+              input#elat(type='hidden', name='elat')
+              input#elng(type='hidden', name='elng')
+            .form-group
+              label(for='gascost') Fuel Price
+              input#gascost(type='number', step='any', placeholder='3.50', name='gascost')
+            .form-group
+              label(for='photos') Photos
+              input#photos(type='file', name='photos', multiple=true)
+            button.btn.btn-default(type='submit') Submit
+block scripts
+  script(src='/js/user/new-trips.js')
+

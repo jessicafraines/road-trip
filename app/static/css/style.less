@@ -1,6 +1,49 @@
-@base: #f938ab;
-
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Fredericka+the+Great|Bad+Script|Lobster|Rock+Salt|Bangers);
+@base: #F5F5F5;
+@font1: 'Permanent Marker', cursive;
+@font: 'Fredericka the Great', cursive;
+@font3: 'Bad Script', cursive;
+@font4: 'Lobster', cursive;
 body{
   background-color: saturate(@base, 5%);
+  font-family: @font;
+}
+.navbar-default .navbar-nav>li>a{
+  color: white;
+  font-family: @font;
+  font-size: 25px;
 }
 
+.navbar-default{
+  background-color: #303030;
+}
+.navbar-default .navbar-brand{
+  color: white;
+  font-family: @font;
+  font-size: 50px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  padding: 15px;
+}
+#map{
+  border: 2px double grey;
+  height: 500px;
+  margin: 0 100px;
+}
+
+.btn-success:hover{
+  color: white;
+  background-color: lightgray;
+  border-color: black;
+}
+
+/*.btn-success{
+  background color: gray;
+  border-color: gray;
+  color: white;
+}*/
+
+label{
+  padding: 10px;
+}
